@@ -1,0 +1,2391 @@
+{
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "metadata": {
+        "id": "B7sMIpao-c6x"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "import seaborn as sns"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Rb2th5pgCoru",
+        "outputId": "08e6c244-f899-42a5-883e-75e498409017"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "{\n",
+            " \"cells\": [\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"Hmt5hLSnFuQ-\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"Consider the following Python dictionary `data` and Python list `labels`:\\n\",\n",
+            "    \"\\n\",\n",
+            "    \"``` python\\n\",\n",
+            "    \"data = {'animal': ['cat', 'cat', 'snake', 'dog', 'dog', 'cat', 'snake', 'cat', 'dog', 'dog'],\\n\",\n",
+            "    \"        'age': [2.5, 3, 0.5, np.nan, 5, 2, 4.5, np.nan, 7, 3],\\n\",\n",
+            "    \"        'visits': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],\\n\",\n",
+            "    \"        'priority': ['yes', 'yes', 'no', 'yes', 'no', 'no', 'no', 'yes', 'no', 'no']}\\n\",\n",
+            "    \"\\n\",\n",
+            "    \"labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']\\n\",\n",
+            "    \"```\\n\",\n",
+            "    \"\\n\",\n",
+            "    \"**1.** Create a DataFrame `df` from this dictionary `data` which has the index `labels`.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": 2,\n",
+            "   \"metadata\": {\n",
+            "    \"colab\": {\n",
+            "     \"base_uri\": \"https://localhost:8080/\",\n",
+            "     \"height\": 201\n",
+            "    },\n",
+            "    \"executionInfo\": {\n",
+            "     \"elapsed\": 13,\n",
+            "     \"status\": \"error\",\n",
+            "     \"timestamp\": 1635478191857,\n",
+            "     \"user\": {\n",
+            "      \"displayName\": \"Ummar Shaik\",\n",
+            "      \"photoUrl\": \"https://lh3.googleusercontent.com/a/default-user=s64\",\n",
+            "      \"userId\": \"14772186324132307288\"\n",
+            "     },\n",
+            "     \"user_tz\": -330\n",
+            "    },\n",
+            "    \"id\": \"i-2HoeEiFuQ_\",\n",
+            "    \"outputId\": \"6b2758ef-a53c-4084-a4e6-db8f69fa73bd\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"IpKnDID_FuRB\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**2.** Display a summary of the basic information about this DataFrame and its data (*hint: there is a single method that can be called on the DataFrame*).\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"gcovPS3rFuRC\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"ab1u4T55FuRC\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**3.** Return the first 3 rows of the DataFrame `df`.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"uIcy04PCFuRD\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"Insh_QRrFuRD\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**4.** Display the 'animal' and 'age' columns from the DataFrame `df`\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": 3,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"pJ-PHmJ5FuRE\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"xRORUgdwFuRE\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**5.** Display the data in rows `[3, 4, 8]` *and* in columns `['animal', 'age']'\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": 4,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"8Yx-a5yyFuRF\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"EwxrthzwFuRF\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**6.** Select only the rows where the number of visits is greater than 3.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"J8tm9hpcFuRF\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"2XhJNfmKFuRF\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**7.** Select the rows where the age is missing, i.e. it is `NaN`.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"0D0NW1Y-FuRG\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"mjT1t30pFuRG\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**8.** Select the rows where the animal is a cat *and* the age is less than 3.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"llayTxaVFuRG\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"TpFIIG6YFuRG\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**9.** Select the rows where the age is between 2 and 4 (inclusive)\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": 5,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"DSg6DgMSFuRH\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"hpRQ38reFuRH\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**10.** Change the age in row 'f' to 1.5.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"_YMVhJ8vFuRH\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"hBWRarrFFuRH\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**11.** Calculate the sum of all visits in `df` (i.e. the total number of visits).\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"f68JlP6vFuRH\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"pS3mMupIFuRH\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**12.** Calculate the mean age for each different animal in `df`.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"DssyUV8LFuRI\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"GMR-Ace2FuRI\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**13.** Append a new row 'k' to `df` with your choice of values for each column. Then delete that row to return the original DataFrame.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"P8Qfy0a8FuRI\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"GjMKZ4POFuRI\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**14.** Count the number of each type of animal in `df`.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"1ydrxeyNFuRI\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"MNBGtMjoFuRI\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**15.** Sort `df` first by the values in the 'age' in *decending* order, then by the value in the 'visits' column in *ascending* order (so row `i` should be first, and row `d` should be last).\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"76tGccYfFuRJ\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"5VOktn8PFuRJ\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**16.** The 'priority' column contains the values 'yes' and 'no'. Replace this column with a column of boolean values: 'yes' should be `True` and 'no' should be `False`.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"HUrNuHMfFuRJ\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"T9MVDUniFuRJ\"\n",
+            "   },\n",
+            "   \"source\": [\n",
+            "    \"**17.** In the 'animal' column, change the 'snake' entries to 'python'.\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {\n",
+            "    \"id\": \"pWNj4Vl4FuRJ\"\n",
+            "   },\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {},\n",
+            "   \"source\": [\n",
+            "    \"**18.** Load the ny-flights dataset to Python\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {},\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {},\n",
+            "   \"source\": [\n",
+            "    \"**19.** Which airline ID is present maximum times in the dataset\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {},\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"markdown\",\n",
+            "   \"metadata\": {},\n",
+            "   \"source\": [\n",
+            "    \"**20.** Draw a plot between dep_delay and arr_delay\"\n",
+            "   ]\n",
+            "  },\n",
+            "  {\n",
+            "   \"cell_type\": \"code\",\n",
+            "   \"execution_count\": null,\n",
+            "   \"metadata\": {},\n",
+            "   \"outputs\": [],\n",
+            "   \"source\": []\n",
+            "  }\n",
+            " ],\n",
+            " \"metadata\": {\n",
+            "  \"colab\": {\n",
+            "   \"name\": \"100-pandas-puzzles-with-solutions.ipynb\",\n",
+            "   \"provenance\": []\n",
+            "  },\n",
+            "  \"kernelspec\": {\n",
+            "   \"display_name\": \"Python 3\",\n",
+            "   \"language\": \"python\",\n",
+            "   \"name\": \"python3\"\n",
+            "  },\n",
+            "  \"language_info\": {\n",
+            "   \"codemirror_mode\": {\n",
+            "    \"name\": \"ipython\",\n",
+            "    \"version\": 3\n",
+            "   },\n",
+            "   \"file_extension\": \".py\",\n",
+            "   \"mimetype\": \"text/x-python\",\n",
+            "   \"name\": \"python\",\n",
+            "   \"nbconvert_exporter\": \"python\",\n",
+            "   \"pygments_lexer\": \"ipython3\",\n",
+            "   \"version\": \"3.8.8\"\n",
+            "  }\n",
+            " },\n",
+            " \"nbformat\": 4,\n",
+            " \"nbformat_minor\": 1\n",
+            "}\n",
+            "\n"
+          ]
+        }
+      ],
+      "source": [
+        "FileContent = file.read()\n",
+        "print(FileContent)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xLgNQLVnEMh2",
+        "outputId": "491046c0-c6e8-405a-a0c4-3be5a89c604a"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "  animal  age  visits priority\n",
+            "a    cat  2.5       1      yes\n",
+            "b    cat  3.0       3      yes\n",
+            "c  snake  0.5       2       no\n",
+            "d    dog  NaN       3      yes\n",
+            "e    dog  5.0       2       no\n",
+            "f    cat  2.0       3       no\n",
+            "g  snake  4.5       1       no\n",
+            "h    cat  NaN       1      yes\n",
+            "i    dog  7.0       2       no\n",
+            "j    dog  3.0       1       no\n"
+          ]
+        }
+      ],
+      "source": [
+        "data = {'animal': ['cat', 'cat', 'snake', 'dog', 'dog', 'cat', 'snake', 'cat', 'dog', 'dog'],\n",
+        "        'age': [2.5, 3, 0.5, np.nan, 5, 2, 4.5, np.nan, 7, 3],\n",
+        "        'visits': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],\n",
+        "        'priority': ['yes', 'yes', 'no', 'yes', 'no', 'no', 'no', 'yes', 'no', 'no']}\n",
+        "\n",
+        "labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']\n",
+        "\n",
+        "\n",
+        "df = pd.DataFrame(data, index=labels)\n",
+        "print(df)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "n4TR4H4oFWYQ"
+      },
+      "outputs": [],
+      "source": [
+        "### Display a summary of the basic information about this DataFrame and its data (*hint: there is a single method that can be called on the DataFrame*)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pIfeSBhZFXDf",
+        "outputId": "d41fe781-b4f9-4e15-9677-768498d1601c"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Summary of the basic information about this DataFrame and its data:\n",
+            "<class 'pandas.core.frame.DataFrame'>\n",
+            "Index: 10 entries, a to j\n",
+            "Data columns (total 4 columns):\n",
+            " #   Column    Non-Null Count  Dtype  \n",
+            "---  ------    --------------  -----  \n",
+            " 0   animal    10 non-null     object \n",
+            " 1   age       8 non-null      float64\n",
+            " 2   visits    10 non-null     int64  \n",
+            " 3   priority  10 non-null     object \n",
+            "dtypes: float64(1), int64(1), object(2)\n",
+            "memory usage: 400.0+ bytes\n",
+            "None\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(\"Summary of the basic information about this DataFrame and its data:\")\n",
+        "print(df.info())"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "77oKiYnzFdN4"
+      },
+      "outputs": [],
+      "source": [
+        "###Return the first 3 rows of the DataFrame `df`.\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ky9ni0ZRFrXK",
+        "outputId": "d3f54515-5574-4139-b402-18a0f6e4549a"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "  animal  age  visits priority\n",
+            "a    cat  2.5       1      yes\n",
+            "b    cat  3.0       3      yes\n",
+            "c  snake  0.5       2       no\n",
+            "d    dog  NaN       3      yes\n",
+            "e    dog  5.0       2       no\n",
+            "f    cat  2.0       3       no\n",
+            "g  snake  4.5       1       no\n",
+            "h    cat  NaN       1      yes\n",
+            "i    dog  7.0       2       no\n",
+            "j    dog  3.0       1       no\n"
+          ]
+        }
+      ],
+      "source": [
+        "df.head(3)\n",
+        "print (df)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "6SVQa26XGQ9M"
+      },
+      "outputs": [],
+      "source": [
+        "###Display the 'animal' and 'age' columns from the DataFrame `df`"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "q4wrhB2zGdNk",
+        "outputId": "7f7e7d4d-1a28-476a-d595-63d9e97fa1ac"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "  animal  age\n",
+            "a    cat  2.5\n",
+            "b    cat  3.0\n",
+            "c  snake  0.5\n",
+            "d    dog  NaN\n",
+            "e    dog  5.0\n",
+            "f    cat  2.0\n",
+            "g  snake  4.5\n",
+            "h    cat  NaN\n",
+            "i    dog  7.0\n",
+            "j    dog  3.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(df[['animal', 'age']])"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "KQl3IktwG7ZO"
+      },
+      "outputs": [],
+      "source": [
+        "### Display the data in rows `[3, 4, 8]` *and* in columns `['animal', 'age']'\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df.loc[df.index[[3, 4, 8]], ['animal', 'age']]"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 143
+        },
+        "id": "cVat00mtOs4Q",
+        "outputId": "c062221e-96cc-45bb-ebe0-56d164a07656"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "  animal  age\n",
+              "d    dog  NaN\n",
+              "e    dog  5.0\n",
+              "i    dog  7.0"
+            ],
+            "text/html": [
+              "\n",
+              "  <div id=\"df-a4878763-10df-4d24-8a3c-ca8ea51a53e7\">\n",
+              "    <div class=\"colab-df-container\">\n",
+              "      <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>animal</th>\n",
+              "      <th>age</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>d</th>\n",
+              "      <td>dog</td>\n",
+              "      <td>NaN</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>e</th>\n",
+              "      <td>dog</td>\n",
+              "      <td>5.0</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>i</th>\n",
+              "      <td>dog</td>\n",
+              "      <td>7.0</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-a4878763-10df-4d24-8a3c-ca8ea51a53e7')\"\n",
+              "              title=\"Convert this dataframe to an interactive table.\"\n",
+              "              style=\"display:none;\">\n",
+              "        \n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\"viewBox=\"0 0 24 24\"\n",
+              "       width=\"24px\">\n",
+              "    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n",
+              "    <path d=\"M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z\"/><path d=\"M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z\"/>\n",
+              "  </svg>\n",
+              "      </button>\n",
+              "      \n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      flex-wrap:wrap;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "      <script>\n",
+              "        const buttonEl =\n",
+              "          document.querySelector('#df-a4878763-10df-4d24-8a3c-ca8ea51a53e7 button.colab-df-convert');\n",
+              "        buttonEl.style.display =\n",
+              "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "        async function convertToInteractive(key) {\n",
+              "          const element = document.querySelector('#df-a4878763-10df-4d24-8a3c-ca8ea51a53e7');\n",
+              "          const dataTable =\n",
+              "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                     [key], {});\n",
+              "          if (!dataTable) return;\n",
+              "\n",
+              "          const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "            '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "            + ' to learn more about interactive tables.';\n",
+              "          element.innerHTML = '';\n",
+              "          dataTable['output_type'] = 'display_data';\n",
+              "          await google.colab.output.renderOutput(dataTable, element);\n",
+              "          const docLink = document.createElement('div');\n",
+              "          docLink.innerHTML = docLinkHtml;\n",
+              "          element.appendChild(docLink);\n",
+              "        }\n",
+              "      </script>\n",
+              "    </div>\n",
+              "  </div>\n",
+              "  "
+            ]
+          },
+          "metadata": {},
+          "execution_count": 6
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "AJ7DB5s-WzoL"
+      },
+      "outputs": [],
+      "source": [
+        "### Select only the rows where the number of visits is greater than 3.\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 93
+        },
+        "id": "1uYnanFlIJyk",
+        "outputId": "27a270a6-6539-483f-c520-3af6c84cf1cb"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/html": [
+              "\n",
+              "  <div id=\"df-b03f90d1-83ad-4297-b42a-9a6e3dad0e06\">\n",
+              "    <div class=\"colab-df-container\">\n",
+              "      <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>animal</th>\n",
+              "      <th>age</th>\n",
+              "      <th>visits</th>\n",
+              "      <th>priority</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-b03f90d1-83ad-4297-b42a-9a6e3dad0e06')\"\n",
+              "              title=\"Convert this dataframe to an interactive table.\"\n",
+              "              style=\"display:none;\">\n",
+              "        \n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\"viewBox=\"0 0 24 24\"\n",
+              "       width=\"24px\">\n",
+              "    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n",
+              "    <path d=\"M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z\"/><path d=\"M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z\"/>\n",
+              "  </svg>\n",
+              "      </button>\n",
+              "      \n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      flex-wrap:wrap;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "      <script>\n",
+              "        const buttonEl =\n",
+              "          document.querySelector('#df-b03f90d1-83ad-4297-b42a-9a6e3dad0e06 button.colab-df-convert');\n",
+              "        buttonEl.style.display =\n",
+              "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "        async function convertToInteractive(key) {\n",
+              "          const element = document.querySelector('#df-b03f90d1-83ad-4297-b42a-9a6e3dad0e06');\n",
+              "          const dataTable =\n",
+              "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                     [key], {});\n",
+              "          if (!dataTable) return;\n",
+              "\n",
+              "          const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "            '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "            + ' to learn more about interactive tables.';\n",
+              "          element.innerHTML = '';\n",
+              "          dataTable['output_type'] = 'display_data';\n",
+              "          await google.colab.output.renderOutput(dataTable, element);\n",
+              "          const docLink = document.createElement('div');\n",
+              "          docLink.innerHTML = docLinkHtml;\n",
+              "          element.appendChild(docLink);\n",
+              "        }\n",
+              "      </script>\n",
+              "    </div>\n",
+              "  </div>\n",
+              "  "
+            ],
+            "text/plain": [
+              "Empty DataFrame\n",
+              "Columns: [animal, age, visits, priority]\n",
+              "Index: []"
+            ]
+          },
+          "execution_count": 125,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df[df['visits'] >3]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "PvBnWqucISi3"
+      },
+      "outputs": [],
+      "source": [
+        "### Select the rows where the age is missing, i.e. it is `NaN`."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 176
+        },
+        "id": "l7ezeHu0Ifj6",
+        "outputId": "92ec14f5-bede-4579-b1b2-aefd3c10f239"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/html": [
+              "\n",
+              "  <div id=\"df-e5162952-fca8-40de-9961-096f790c28e4\">\n",
+              "    <div class=\"colab-df-container\">\n",
+              "      <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>animal</th>\n",
+              "      <th>age</th>\n",
+              "      <th>visits</th>\n",
+              "      <th>priority</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>d</th>\n",
+              "      <td>dog</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>3</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>h</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>1</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-e5162952-fca8-40de-9961-096f790c28e4')\"\n",
+              "              title=\"Convert this dataframe to an interactive table.\"\n",
+              "              style=\"display:none;\">\n",
+              "        \n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\"viewBox=\"0 0 24 24\"\n",
+              "       width=\"24px\">\n",
+              "    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n",
+              "    <path d=\"M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z\"/><path d=\"M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z\"/>\n",
+              "  </svg>\n",
+              "      </button>\n",
+              "      \n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      flex-wrap:wrap;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "      <script>\n",
+              "        const buttonEl =\n",
+              "          document.querySelector('#df-e5162952-fca8-40de-9961-096f790c28e4 button.colab-df-convert');\n",
+              "        buttonEl.style.display =\n",
+              "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "        async function convertToInteractive(key) {\n",
+              "          const element = document.querySelector('#df-e5162952-fca8-40de-9961-096f790c28e4');\n",
+              "          const dataTable =\n",
+              "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                     [key], {});\n",
+              "          if (!dataTable) return;\n",
+              "\n",
+              "          const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "            '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "            + ' to learn more about interactive tables.';\n",
+              "          element.innerHTML = '';\n",
+              "          dataTable['output_type'] = 'display_data';\n",
+              "          await google.colab.output.renderOutput(dataTable, element);\n",
+              "          const docLink = document.createElement('div');\n",
+              "          docLink.innerHTML = docLinkHtml;\n",
+              "          element.appendChild(docLink);\n",
+              "        }\n",
+              "      </script>\n",
+              "    </div>\n",
+              "  </div>\n",
+              "  "
+            ],
+            "text/plain": [
+              "  animal  age visits priority\n",
+              "d    dog  NaN      3      yes\n",
+              "h    cat  NaN      1      yes"
+            ]
+          },
+          "execution_count": 126,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df[df['age'].isnull()]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "JcdnVgqNIrQ9"
+      },
+      "outputs": [],
+      "source": [
+        "### Select the rows where the animal is a cat *and* the age is less than 3.\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 239
+        },
+        "id": "FcD6YIXLI1rJ",
+        "outputId": "283628a9-4577-4309-8bae-ee6ecbb3f4d3"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/html": [
+              "\n",
+              "  <div id=\"df-21957c04-1e32-4e31-84f9-d9e5b205f829\">\n",
+              "    <div class=\"colab-df-container\">\n",
+              "      <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>animal</th>\n",
+              "      <th>age</th>\n",
+              "      <th>visits</th>\n",
+              "      <th>priority</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>a</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>2.5</td>\n",
+              "      <td>1</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>b</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>3.0</td>\n",
+              "      <td>3</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>f</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>1.5</td>\n",
+              "      <td>3</td>\n",
+              "      <td>no</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>h</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>1</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-21957c04-1e32-4e31-84f9-d9e5b205f829')\"\n",
+              "              title=\"Convert this dataframe to an interactive table.\"\n",
+              "              style=\"display:none;\">\n",
+              "        \n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\"viewBox=\"0 0 24 24\"\n",
+              "       width=\"24px\">\n",
+              "    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n",
+              "    <path d=\"M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z\"/><path d=\"M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z\"/>\n",
+              "  </svg>\n",
+              "      </button>\n",
+              "      \n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      flex-wrap:wrap;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "      <script>\n",
+              "        const buttonEl =\n",
+              "          document.querySelector('#df-21957c04-1e32-4e31-84f9-d9e5b205f829 button.colab-df-convert');\n",
+              "        buttonEl.style.display =\n",
+              "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "        async function convertToInteractive(key) {\n",
+              "          const element = document.querySelector('#df-21957c04-1e32-4e31-84f9-d9e5b205f829');\n",
+              "          const dataTable =\n",
+              "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                     [key], {});\n",
+              "          if (!dataTable) return;\n",
+              "\n",
+              "          const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "            '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "            + ' to learn more about interactive tables.';\n",
+              "          element.innerHTML = '';\n",
+              "          dataTable['output_type'] = 'display_data';\n",
+              "          await google.colab.output.renderOutput(dataTable, element);\n",
+              "          const docLink = document.createElement('div');\n",
+              "          docLink.innerHTML = docLinkHtml;\n",
+              "          element.appendChild(docLink);\n",
+              "        }\n",
+              "      </script>\n",
+              "    </div>\n",
+              "  </div>\n",
+              "  "
+            ],
+            "text/plain": [
+              "  animal  age visits priority\n",
+              "a    cat  2.5      1      yes\n",
+              "b    cat  3.0      3      yes\n",
+              "f    cat  1.5      3       no\n",
+              "h    cat  NaN      1      yes"
+            ]
+          },
+          "execution_count": 127,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df[(df['animal'] == 'cat')]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "cGu3p3fUJBU-"
+      },
+      "outputs": [],
+      "source": [
+        "### Select the rows where the age is between 2 and 4 (inclusive)\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 187
+        },
+        "id": "8L3E2iSAJG5N",
+        "outputId": "1d9e3b1d-c831-4727-a23d-681ad2c7678a"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/html": [
+              "\n",
+              "  <div id=\"df-ba3cd6ae-2ece-4928-89c9-62aef830970f\">\n",
+              "    <div class=\"colab-df-container\">\n",
+              "      <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>animal</th>\n",
+              "      <th>age</th>\n",
+              "      <th>visits</th>\n",
+              "      <th>priority</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>a</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>2.5</td>\n",
+              "      <td>1</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>b</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>3.0</td>\n",
+              "      <td>3</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>j</th>\n",
+              "      <td>dog</td>\n",
+              "      <td>3.0</td>\n",
+              "      <td>1</td>\n",
+              "      <td>no</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-ba3cd6ae-2ece-4928-89c9-62aef830970f')\"\n",
+              "              title=\"Convert this dataframe to an interactive table.\"\n",
+              "              style=\"display:none;\">\n",
+              "        \n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\"viewBox=\"0 0 24 24\"\n",
+              "       width=\"24px\">\n",
+              "    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n",
+              "    <path d=\"M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z\"/><path d=\"M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z\"/>\n",
+              "  </svg>\n",
+              "      </button>\n",
+              "      \n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      flex-wrap:wrap;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "      <script>\n",
+              "        const buttonEl =\n",
+              "          document.querySelector('#df-ba3cd6ae-2ece-4928-89c9-62aef830970f button.colab-df-convert');\n",
+              "        buttonEl.style.display =\n",
+              "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "        async function convertToInteractive(key) {\n",
+              "          const element = document.querySelector('#df-ba3cd6ae-2ece-4928-89c9-62aef830970f');\n",
+              "          const dataTable =\n",
+              "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                     [key], {});\n",
+              "          if (!dataTable) return;\n",
+              "\n",
+              "          const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "            '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "            + ' to learn more about interactive tables.';\n",
+              "          element.innerHTML = '';\n",
+              "          dataTable['output_type'] = 'display_data';\n",
+              "          await google.colab.output.renderOutput(dataTable, element);\n",
+              "          const docLink = document.createElement('div');\n",
+              "          docLink.innerHTML = docLinkHtml;\n",
+              "          element.appendChild(docLink);\n",
+              "        }\n",
+              "      </script>\n",
+              "    </div>\n",
+              "  </div>\n",
+              "  "
+            ],
+            "text/plain": [
+              "  animal  age visits priority\n",
+              "a    cat  2.5      1      yes\n",
+              "b    cat  3.0      3      yes\n",
+              "j    dog  3.0      1       no"
+            ]
+          },
+          "execution_count": 128,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df[df['age']. between(2,4)]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "HQ5LweqDJSsv"
+      },
+      "outputs": [],
+      "source": [
+        "### Change the age in row 'f' to 1.5.\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "37sysPWPJX3C"
+      },
+      "outputs": [],
+      "source": [
+        "df.loc['f', 'age'] = 1.5"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "39CFypnaJgpf",
+        "outputId": "4fb3ae28-a003-428d-e61e-242848a02a00"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "  animal  age  visits priority\n",
+            "a    cat  2.5       1      yes\n",
+            "b    cat  3.0       3      yes\n",
+            "c  snake  0.5       2       no\n",
+            "d    dog  NaN       3      yes\n",
+            "e    dog  5.0       2       no\n",
+            "f    cat  1.5       3       no\n",
+            "g  snake  4.5       1       no\n",
+            "h    cat  NaN       1      yes\n",
+            "i    dog  7.0       2       no\n",
+            "j    dog  3.0       1       no\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(df)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "Ap1Feb2wJtRY"
+      },
+      "outputs": [],
+      "source": [
+        "### Calculate the sum of all visits in `df` (i.e. the total number of visits).\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wPdnfhB0J4R0",
+        "outputId": "0b55d403-c197-488e-ff9b-f1f57b168fdb"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "19"
+            ]
+          },
+          "execution_count": 111,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df['visits'].sum()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "-2tBWzqhJ9hh"
+      },
+      "outputs": [],
+      "source": [
+        "### Calculate the mean age for each different animal in `df`.\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FNemEB0kKCmN",
+        "outputId": "ac121b0d-48b8-4596-ef7f-804be7ac66b4"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "3.375\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(df['age'].mean())"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "0HxEH3kTKvPu"
+      },
+      "outputs": [],
+      "source": [
+        "### Append a new row 'k' to `df` with your choice of values for each column. Then delete that row to return the original DataFrame.\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "R3a9NmTQK1xc",
+        "outputId": "2d43b3d7-f993-4af7-e8a5-8acc8f443aa5"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "  animal  age visits priority\n",
+            "a    cat  2.5      1      yes\n",
+            "b    cat  3.0      3      yes\n",
+            "c  snake  0.5      2       no\n",
+            "d    dog  NaN      3      yes\n",
+            "e    dog  5.0      2       no\n",
+            "f    cat  1.5      3       no\n",
+            "g  snake  4.5      1       no\n",
+            "h    cat  NaN      1      yes\n",
+            "i    dog  7.0      2       no\n",
+            "j    dog  3.0      1       no\n",
+            "k  snake  1.2      4      yes\n"
+          ]
+        }
+      ],
+      "source": [
+        "df.loc['k'] = ['snake', '1.2', '4', 'yes']\n",
+        "print(df)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IdHvD1AsLpmR",
+        "outputId": "f734b353-6792-45a8-8479-6c61b2f67d4e"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "  animal  age visits priority\n",
+            "a    cat  2.5      1      yes\n",
+            "b    cat  3.0      3      yes\n",
+            "c  snake  0.5      2       no\n",
+            "d    dog  NaN      3      yes\n",
+            "e    dog  5.0      2       no\n",
+            "f    cat  1.5      3       no\n",
+            "g  snake  4.5      1       no\n",
+            "h    cat  NaN      1      yes\n",
+            "i    dog  7.0      2       no\n",
+            "j    dog  3.0      1       no\n"
+          ]
+        }
+      ],
+      "source": [
+        "df = df.drop('k')\n",
+        "print(df)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "z6Bh06QjLtNK"
+      },
+      "outputs": [],
+      "source": [
+        "### Count the number of each type of animal in `df`.\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TY9SRwL0LymE",
+        "outputId": "073f0acc-66c2-4049-ceba-319d47f002bd"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/plain": [
+              "cat      4\n",
+              "dog      4\n",
+              "snake    2\n",
+              "Name: animal, dtype: int64"
+            ]
+          },
+          "execution_count": 49,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df['animal']. value_counts()"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "Yr8YORgiL8z0"
+      },
+      "outputs": [],
+      "source": [
+        "### Sort `df` first by the values in the 'age' in *decending* order, then by the value in the 'visits' column in *ascending* order (so row `i` should be first, and row `d` should be last)."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 427
+        },
+        "id": "3fohlqi9MFIk",
+        "outputId": "effd2b5b-1cbe-4083-f9e5-0d01bb514633"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/html": [
+              "\n",
+              "  <div id=\"df-7e7bf63f-8beb-4cda-9d1c-c9011a0c1b38\">\n",
+              "    <div class=\"colab-df-container\">\n",
+              "      <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>animal</th>\n",
+              "      <th>age</th>\n",
+              "      <th>visits</th>\n",
+              "      <th>priority</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>i</th>\n",
+              "      <td>dog</td>\n",
+              "      <td>7.0</td>\n",
+              "      <td>2</td>\n",
+              "      <td>no</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>e</th>\n",
+              "      <td>dog</td>\n",
+              "      <td>5.0</td>\n",
+              "      <td>2</td>\n",
+              "      <td>no</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>g</th>\n",
+              "      <td>snake</td>\n",
+              "      <td>4.5</td>\n",
+              "      <td>1</td>\n",
+              "      <td>no</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>j</th>\n",
+              "      <td>dog</td>\n",
+              "      <td>3.0</td>\n",
+              "      <td>1</td>\n",
+              "      <td>no</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>b</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>3.0</td>\n",
+              "      <td>3</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>a</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>2.5</td>\n",
+              "      <td>1</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>f</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>1.5</td>\n",
+              "      <td>3</td>\n",
+              "      <td>no</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>c</th>\n",
+              "      <td>snake</td>\n",
+              "      <td>0.5</td>\n",
+              "      <td>2</td>\n",
+              "      <td>no</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>h</th>\n",
+              "      <td>cat</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>1</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>d</th>\n",
+              "      <td>dog</td>\n",
+              "      <td>NaN</td>\n",
+              "      <td>3</td>\n",
+              "      <td>yes</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-7e7bf63f-8beb-4cda-9d1c-c9011a0c1b38')\"\n",
+              "              title=\"Convert this dataframe to an interactive table.\"\n",
+              "              style=\"display:none;\">\n",
+              "        \n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\"viewBox=\"0 0 24 24\"\n",
+              "       width=\"24px\">\n",
+              "    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n",
+              "    <path d=\"M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z\"/><path d=\"M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z\"/>\n",
+              "  </svg>\n",
+              "      </button>\n",
+              "      \n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      flex-wrap:wrap;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "      <script>\n",
+              "        const buttonEl =\n",
+              "          document.querySelector('#df-7e7bf63f-8beb-4cda-9d1c-c9011a0c1b38 button.colab-df-convert');\n",
+              "        buttonEl.style.display =\n",
+              "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "        async function convertToInteractive(key) {\n",
+              "          const element = document.querySelector('#df-7e7bf63f-8beb-4cda-9d1c-c9011a0c1b38');\n",
+              "          const dataTable =\n",
+              "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                     [key], {});\n",
+              "          if (!dataTable) return;\n",
+              "\n",
+              "          const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "            '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "            + ' to learn more about interactive tables.';\n",
+              "          element.innerHTML = '';\n",
+              "          dataTable['output_type'] = 'display_data';\n",
+              "          await google.colab.output.renderOutput(dataTable, element);\n",
+              "          const docLink = document.createElement('div');\n",
+              "          docLink.innerHTML = docLinkHtml;\n",
+              "          element.appendChild(docLink);\n",
+              "        }\n",
+              "      </script>\n",
+              "    </div>\n",
+              "  </div>\n",
+              "  "
+            ],
+            "text/plain": [
+              "  animal  age visits priority\n",
+              "i    dog  7.0      2       no\n",
+              "e    dog  5.0      2       no\n",
+              "g  snake  4.5      1       no\n",
+              "j    dog  3.0      1       no\n",
+              "b    cat  3.0      3      yes\n",
+              "a    cat  2.5      1      yes\n",
+              "f    cat  1.5      3       no\n",
+              "c  snake  0.5      2       no\n",
+              "h    cat  NaN      1      yes\n",
+              "d    dog  NaN      3      yes"
+            ]
+          },
+          "execution_count": 129,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "df.sort_values(by=['age', 'visits'], ascending=[False, True])"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "aB8PHvmjNMuu"
+      },
+      "outputs": [],
+      "source": [
+        "### The 'priority' column contains the values 'yes' and 'no'. Replace this column with a column of boolean values: 'yes' should be `True` and 'no' should be `False`."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sSk82WYhMpIl",
+        "outputId": "e0155e2b-8cc4-4234-f554-5917c98a3dec"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "  animal  age visits priority\n",
+            "a    cat  2.5      1      NaN\n",
+            "b    cat  3.0      3      NaN\n",
+            "c  snake  0.5      2      NaN\n",
+            "d    dog  NaN      3      NaN\n",
+            "e    dog  5.0      2      NaN\n",
+            "f    cat  1.5      3      NaN\n",
+            "g  snake  4.5      1      NaN\n",
+            "h    cat  NaN      1      NaN\n",
+            "i    dog  7.0      2      NaN\n",
+            "j    dog  3.0      1      NaN\n"
+          ]
+        }
+      ],
+      "source": [
+        "df['priority'] = df['priority'].map({'yes':True, 'no': False})\n",
+        "print(df)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "6WgjrB-7PVLy"
+      },
+      "outputs": [],
+      "source": [
+        "### In the 'animal' column, change the 'snake' entries to 'python'."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GhNcv1oQPfbu",
+        "outputId": "4930994c-c20a-4b9f-80ce-d17e3e2865af"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "   animal  age visits priority\n",
+            "a     cat  2.5      1      NaN\n",
+            "b     cat  3.0      3      NaN\n",
+            "c  python  0.5      2      NaN\n",
+            "d     dog  NaN      3      NaN\n",
+            "e     dog  5.0      2      NaN\n",
+            "f     cat  1.5      3      NaN\n",
+            "g  python  4.5      1      NaN\n",
+            "h     cat  NaN      1      NaN\n",
+            "i     dog  7.0      2      NaN\n",
+            "j     dog  3.0      1      NaN\n"
+          ]
+        }
+      ],
+      "source": [
+        "df['animal'] = df['animal'].replace ('snake', 'python')\n",
+        "print (df)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "mVK0aOkBP0Rg"
+      },
+      "outputs": [],
+      "source": [
+        "### Load the ny-flights dataset to Python"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "lbz3yD3dO-U1"
+      },
+      "outputs": [],
+      "source": [
+        "data = pd.read_csv('ny-flights.csv')"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "tfpGfHNTP9Qg"
+      },
+      "outputs": [],
+      "source": [
+        "### Which airline ID is present maximum times in the dataset\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "background_save": true,
+          "base_uri": "https://localhost:8080/",
+          "height": 444
+        },
+        "id": "MaJ363ubQB2r",
+        "outputId": "3ef80305-48fe-47f6-95d4-07f96d8cb8f2"
+      },
+      "outputs": [
+        {
+          "data": {
+            "text/html": [
+              "\n",
+              "  <div id=\"df-436b985e-c52c-46b5-bd0b-717aa2e9ed6d\">\n",
+              "    <div class=\"colab-df-container\">\n",
+              "      <div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>fl_date</th>\n",
+              "      <th>unique_carrier</th>\n",
+              "      <th>airline_id</th>\n",
+              "      <th>tail_num</th>\n",
+              "      <th>fl_num</th>\n",
+              "      <th>origin</th>\n",
+              "      <th>dest</th>\n",
+              "      <th>dep_time</th>\n",
+              "      <th>dep_delay</th>\n",
+              "      <th>arr_time</th>\n",
+              "      <th>arr_delay</th>\n",
+              "      <th>cancelled</th>\n",
+              "      <th>arr</th>\n",
+              "      <th>dep</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>2014-01-01 00:00:00</td>\n",
+              "      <td>AA</td>\n",
+              "      <td>19805</td>\n",
+              "      <td>N338AA</td>\n",
+              "      <td>1</td>\n",
+              "      <td>JFK</td>\n",
+              "      <td>LAX</td>\n",
+              "      <td>914.0</td>\n",
+              "      <td>14.0</td>\n",
+              "      <td>1238.0</td>\n",
+              "      <td>13.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>2014-01-01 12:38:00</td>\n",
+              "      <td>2014-01-01 09:14:00</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>2014-01-01 00:00:00</td>\n",
+              "      <td>AA</td>\n",
+              "      <td>19805</td>\n",
+              "      <td>N335AA</td>\n",
+              "      <td>3</td>\n",
+              "      <td>JFK</td>\n",
+              "      <td>LAX</td>\n",
+              "      <td>1157.0</td>\n",
+              "      <td>-3.0</td>\n",
+              "      <td>1523.0</td>\n",
+              "      <td>13.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>2014-01-01 15:23:00</td>\n",
+              "      <td>2014-01-01 11:57:00</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>2014-01-01 00:00:00</td>\n",
+              "      <td>AA</td>\n",
+              "      <td>19805</td>\n",
+              "      <td>N327AA</td>\n",
+              "      <td>21</td>\n",
+              "      <td>JFK</td>\n",
+              "      <td>LAX</td>\n",
+              "      <td>1902.0</td>\n",
+              "      <td>2.0</td>\n",
+              "      <td>2224.0</td>\n",
+              "      <td>9.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>2014-01-01 22:24:00</td>\n",
+              "      <td>2014-01-01 19:02:00</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>3</th>\n",
+              "      <td>2014-01-01 00:00:00</td>\n",
+              "      <td>AA</td>\n",
+              "      <td>19805</td>\n",
+              "      <td>N3EHAA</td>\n",
+              "      <td>29</td>\n",
+              "      <td>LGA</td>\n",
+              "      <td>PBI</td>\n",
+              "      <td>722.0</td>\n",
+              "      <td>-8.0</td>\n",
+              "      <td>1014.0</td>\n",
+              "      <td>-26.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>2014-01-01 10:14:00</td>\n",
+              "      <td>2014-01-01 07:22:00</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>4</th>\n",
+              "      <td>2014-01-01 00:00:00</td>\n",
+              "      <td>AA</td>\n",
+              "      <td>19805</td>\n",
+              "      <td>N319AA</td>\n",
+              "      <td>117</td>\n",
+              "      <td>JFK</td>\n",
+              "      <td>LAX</td>\n",
+              "      <td>1347.0</td>\n",
+              "      <td>2.0</td>\n",
+              "      <td>1706.0</td>\n",
+              "      <td>1.0</td>\n",
+              "      <td>0.0</td>\n",
+              "      <td>2014-01-01 17:06:00</td>\n",
+              "      <td>2014-01-01 13:47:00</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>\n",
+              "      <button class=\"colab-df-convert\" onclick=\"convertToInteractive('df-436b985e-c52c-46b5-bd0b-717aa2e9ed6d')\"\n",
+              "              title=\"Convert this dataframe to an interactive table.\"\n",
+              "              style=\"display:none;\">\n",
+              "        \n",
+              "  <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24px\"viewBox=\"0 0 24 24\"\n",
+              "       width=\"24px\">\n",
+              "    <path d=\"M0 0h24v24H0V0z\" fill=\"none\"/>\n",
+              "    <path d=\"M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z\"/><path d=\"M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z\"/>\n",
+              "  </svg>\n",
+              "      </button>\n",
+              "      \n",
+              "  <style>\n",
+              "    .colab-df-container {\n",
+              "      display:flex;\n",
+              "      flex-wrap:wrap;\n",
+              "      gap: 12px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert {\n",
+              "      background-color: #E8F0FE;\n",
+              "      border: none;\n",
+              "      border-radius: 50%;\n",
+              "      cursor: pointer;\n",
+              "      display: none;\n",
+              "      fill: #1967D2;\n",
+              "      height: 32px;\n",
+              "      padding: 0 0 0 0;\n",
+              "      width: 32px;\n",
+              "    }\n",
+              "\n",
+              "    .colab-df-convert:hover {\n",
+              "      background-color: #E2EBFA;\n",
+              "      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);\n",
+              "      fill: #174EA6;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert {\n",
+              "      background-color: #3B4455;\n",
+              "      fill: #D2E3FC;\n",
+              "    }\n",
+              "\n",
+              "    [theme=dark] .colab-df-convert:hover {\n",
+              "      background-color: #434B5C;\n",
+              "      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);\n",
+              "      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));\n",
+              "      fill: #FFFFFF;\n",
+              "    }\n",
+              "  </style>\n",
+              "\n",
+              "      <script>\n",
+              "        const buttonEl =\n",
+              "          document.querySelector('#df-436b985e-c52c-46b5-bd0b-717aa2e9ed6d button.colab-df-convert');\n",
+              "        buttonEl.style.display =\n",
+              "          google.colab.kernel.accessAllowed ? 'block' : 'none';\n",
+              "\n",
+              "        async function convertToInteractive(key) {\n",
+              "          const element = document.querySelector('#df-436b985e-c52c-46b5-bd0b-717aa2e9ed6d');\n",
+              "          const dataTable =\n",
+              "            await google.colab.kernel.invokeFunction('convertToInteractive',\n",
+              "                                                     [key], {});\n",
+              "          if (!dataTable) return;\n",
+              "\n",
+              "          const docLinkHtml = 'Like what you see? Visit the ' +\n",
+              "            '<a target=\"_blank\" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'\n",
+              "            + ' to learn more about interactive tables.';\n",
+              "          element.innerHTML = '';\n",
+              "          dataTable['output_type'] = 'display_data';\n",
+              "          await google.colab.output.renderOutput(dataTable, element);\n",
+              "          const docLink = document.createElement('div');\n",
+              "          docLink.innerHTML = docLinkHtml;\n",
+              "          element.appendChild(docLink);\n",
+              "        }\n",
+              "      </script>\n",
+              "    </div>\n",
+              "  </div>\n",
+              "  "
+            ],
+            "text/plain": [
+              "               fl_date unique_carrier  airline_id tail_num  fl_num origin  \\\n",
+              "0  2014-01-01 00:00:00             AA       19805   N338AA       1    JFK   \n",
+              "1  2014-01-01 00:00:00             AA       19805   N335AA       3    JFK   \n",
+              "2  2014-01-01 00:00:00             AA       19805   N327AA      21    JFK   \n",
+              "3  2014-01-01 00:00:00             AA       19805   N3EHAA      29    LGA   \n",
+              "4  2014-01-01 00:00:00             AA       19805   N319AA     117    JFK   \n",
+              "\n",
+              "  dest  dep_time  dep_delay  arr_time  arr_delay  cancelled  \\\n",
+              "0  LAX     914.0       14.0    1238.0       13.0        0.0   \n",
+              "1  LAX    1157.0       -3.0    1523.0       13.0        0.0   \n",
+              "2  LAX    1902.0        2.0    2224.0        9.0        0.0   \n",
+              "3  PBI     722.0       -8.0    1014.0      -26.0        0.0   \n",
+              "4  LAX    1347.0        2.0    1706.0        1.0        0.0   \n",
+              "\n",
+              "                   arr                  dep  \n",
+              "0  2014-01-01 12:38:00  2014-01-01 09:14:00  \n",
+              "1  2014-01-01 15:23:00  2014-01-01 11:57:00  \n",
+              "2  2014-01-01 22:24:00  2014-01-01 19:02:00  \n",
+              "3  2014-01-01 10:14:00  2014-01-01 07:22:00  \n",
+              "4  2014-01-01 17:06:00  2014-01-01 13:47:00  "
+            ]
+          },
+          "execution_count": 140,
+          "metadata": {},
+          "output_type": "execute_result"
+        }
+      ],
+      "source": [
+        "data.head(5)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Jc0wiewkStAn",
+        "outputId": "94fa3286-66d6-4ee1-ddd7-b3c70af0c8b9"
+      },
+      "outputs": [
+        {
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "maximum:  21171\n"
+          ]
+        }
+      ],
+      "source": [
+        "max_data=data[\"airline_id\"].max()\n",
+        "print(\"maximum: \",max_data)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "9Nz0yIHOTnSA"
+      },
+      "outputs": [],
+      "source": [
+        "###Draw a plot between dep_delay and arr_delay\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "sujsfCt2Uhi5"
+      },
+      "outputs": [],
+      "source": [
+        "import matplotlib.pyplot as plt"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 249
+        },
+        "id": "1j6hy9UYT7I_",
+        "outputId": "ea974568-acae-4949-d355-ef8206684204"
+      },
+      "outputs": [
+        {
+          "name": "stderr",
+          "output_type": "stream",
+          "text": [
+            "/usr/local/lib/python3.9/dist-packages/pandas/plotting/_matplotlib/core.py:1114: UserWarning: No data for colormapping provided via 'c'. Parameters 'cmap' will be ignored\n",
+            "  scatter = ax.scatter(\n"
+          ]
+        },
+        {
+          "data": {
+            "image/png": "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\n",
+            "text/plain": [
+              "<Figure size 432x288 with 1 Axes>"
+            ]
+          },
+          "metadata": {},
+          "output_type": "display_data"
+        }
+      ],
+      "source": [
+        "data.plot(kind = \"scatter\", x = 'dep_delay', y ='arr_delay')\n",
+        "plt.grid()"
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
